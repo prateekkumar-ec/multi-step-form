@@ -390,6 +390,9 @@ body {
     color: hsl(231, 11%, 63%);
     font-weight: 500;
 }
+.navigate .pre:hover {
+    color: hsl(213, 96%, 18%);
+}
 .navigate .next {
     background: hsl(213, 96%, 18%);
     color: white;
@@ -401,6 +404,9 @@ body {
 }
 .fix-navigate {
     justify-content: flex-end !important;
+}
+.confirm:hover {
+    background: hsl(228, 100%, 84%) !important;
 }
 
 .noDisplay {

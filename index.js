@@ -137,6 +137,8 @@ function open_next_form(event) {
         activate_form_4();
         step_3_number.classList.remove("selected-step-number");
         step_4_number.classList.add("selected-step-number");
+        document.querySelector(".navigate .next").innerText = "Confirm";
+        document.querySelector(".navigate .next").classList.add("confirm");
         currStep = 4;
     } else if (currStep == 4) {
         form_4.classList.add("noDisplay");
@@ -168,6 +170,8 @@ function open_previous_form(event) {
         form_3.classList.remove("noDisplay");
         step_4_number.classList.remove("selected-step-number");
         step_3_number.classList.add("selected-step-number");
+        document.querySelector(".navigate .next").innerText = "Next Step";
+        document.querySelector(".navigate .next").classList.remove("confirm");
         currStep = 3;
     }
 }
@@ -188,12 +192,6 @@ function select_plan(event) {
     }
     event.currentTarget.classList.add("selected-plan");
     selectedPlan = event.currentTarget;
-    for (let digit of selectedPlan.querySelector(".price").innerHTML) {
-        if (!isNaN(digit)) {
-            totalPlanPrice += digit;
-        }
-    }
-    totalPlanPrice = parseInt(totalPlanPrice);
 }
 
 let button = document.querySelector(".button");
@@ -269,13 +267,6 @@ function select_add_on(event) {
     for (let add_on of add_ons) {
         if (add_on.querySelector("input").checked == true) {
             addOns.push(add_on);
-            let new_price = "";
-            for (let digit of add_on.querySelector(".price").innerHTML) {
-                if (!isNaN(digit)) {
-                    new_price += digit;
-                }
-            }
-            totalAddOnPrice += parseInt(new_price);
         }
     }
 }
@@ -286,11 +277,13 @@ let plan_header = document.querySelector(".form-4 .plan-header");
 let add_ons_div = document.querySelector(".form-4 .add-ons");
 
 function activate_form_4() {
+    totalAddOnPrice = 0;
+    totalPlanPrice = "";
+
     let add_ons = document.querySelectorAll(".form-4 .add-ons .add-on");
     for (let add_on of add_ons) {
         add_ons_div.removeChild(add_on);
     }
-    console.log(add_ons_div);
 
     plan_header.querySelector(".plan-name-duration").innerText =
         selectedPlan.querySelector(".plan-name").innerText + " (" + planDuration[0].toUpperCase() + planDuration.slice(1) + ")";
@@ -309,5 +302,23 @@ function activate_form_4() {
         add_on_div.appendChild(name_p);
         add_on_div.appendChild(price_p);
         add_ons_div.appendChild(add_on_div);
+
+        let new_price = "";
+        for (let digit of add_on.querySelector(".price").innerHTML) {
+            if (!isNaN(digit)) {
+                new_price += digit;
+            }
+        }
+        totalAddOnPrice += parseInt(new_price);
     }
+
+    for (let digit of selectedPlan.querySelector(".price").innerHTML) {
+        if (!isNaN(digit)) {
+            totalPlanPrice += digit;
+        }
+    }
+    totalPlanPrice = parseInt(totalPlanPrice);
+    let total = totalAddOnPrice + totalPlanPrice;
+    console.log(total);
+    document.querySelector(".total-price .price").innerHTML = "&dollar;" + total + "/" + planDuration.slice(0, 2);
 }
