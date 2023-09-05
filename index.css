@@ -436,9 +436,10 @@ body {
         background: unset;
         border-radius: 8px;
         padding: 0rem;
+        margin-bottom: 6rem;;
 
-        min-height: 110vh;
     }
+
 
     /* sidebar --------------------------------- */
     .sidebar {
