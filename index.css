@@ -7,6 +7,9 @@ body {
     font-size: 16px;
     background: hsl(217, 100%, 97%);
 }
+* {
+    box-sizing: border-box;
+}
 
 /* container --------------------------- */
 .container {
@@ -313,10 +316,15 @@ body {
 }
 .plan-name-duration {
     color: hsl(213, 96%, 18%);
+    font-weight: 500;
 }
 .change {
     text-decoration: underline;
     color: hsl(231, 11%, 63%);
+    cursor: pointer;
+}
+.change:hover {
+    color: hsl(243, 100%, 62%);
 }
 .plan-header .price {
     color: hsl(213, 96%, 18%);
@@ -355,7 +363,6 @@ body {
     color: hsl(243, 100%, 62%);
     font-weight: 500;
 }
-
 /* thank -you ============================================ */
 .thank-you {
     margin-top: 6rem;
@@ -407,6 +414,441 @@ body {
 }
 .confirm:hover {
     background: hsl(228, 100%, 84%) !important;
+}
+
+/* mobile responsive css=========================================================================== */
+
+@media (max-width: 450px) {
+    /* global ------------------------- */
+    body {
+        /* font-family: Ubuntu; */
+        /* font-size: 16px; */
+        background: hsl(217, 100%, 97%);
+    }
+
+    /* container --------------------------- */
+    .container {
+        width: 100%;
+        margin: 0;
+        display: block;
+        /* justify-content: space-between; */
+
+        background: unset;
+        border-radius: 8px;
+        padding: 0rem;
+
+        min-height: 110vh;
+    }
+
+    /* sidebar --------------------------------- */
+    .sidebar {
+        padding: 2rem 0rem;
+
+        background: url("./assets/images/bg-sidebar-mobile.svg") no-repeat;
+        background-size: cover;
+        border-radius: 0px;
+        height: 11rem;
+    }
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .sidebar li {
+        display: flex;
+        align-items: center;
+        gap: 0rem;
+    }
+    /* .sidebar .step-number {
+        color: white;
+        padding: 0.5rem 0.8rem;
+        border-radius: 50%;
+        background: hsl(206, 94%, 87%); 
+        border: 1px solid hsl(206, 94%, 87%);
+        font-weight: 500;
+    }  */
+    .sidebar .step-info {
+        display: none;
+        gap: 0rem;
+    }
+    /* .sidebar .step-info .name {
+        color: hsl(217, 100%, 97%);
+        font-size: 1.2rem;
+        font-weight: 500;
+    } */
+    /* .sidebar .step-info .step {
+        color: hsl(231, 11%, 63%);
+    } */
+    /* .selected-step-number {
+        background: hsl(206, 94%, 87%);
+        color: hsl(213, 96%, 18%) !important;
+    } */
+    /* form and navigation bar ----------------------- */
+
+    .forms-navigation-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem;
+        min
+    }
+    .forms {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background: white;
+        padding: 1.7rem;
+        border-radius: 8px;
+
+        margin-top: -4.6rem;
+    }
+    /* .form-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    } */
+    .form-header h2 {
+        font-size: 1.6rem;
+        /* font-weight: 500; */
+        /* color: hsl(213, 96%, 18%); */
+    }
+    .form-header p {
+        font-size: 1rem;
+        /* color: hsl(231, 11%, 63%); */
+    }
+    /* .form-1,
+    .form-2,
+    .form-3,
+    .form-4 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    } */
+
+    /* step form 1 ------------------------------  */
+
+    /* .form-1 .form-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    } */
+    /* .form-1 .name-field-required {
+        display: flex;
+        justify-content: space-between;
+    } */
+    /* .name,
+    .email,
+    .phone {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    } */
+    /* .form-1 .field-name {
+        color: hsl(213, 96%, 18%);
+    } */
+    .form-1 .field-requirement-flag {
+        /* color: hsl(354, 84%, 57%); */
+        /* font-family: Ubuntu; */
+        font-size: 0.8rem;
+    }
+    /* .form-1 input {
+        padding: 1.2rem;
+        border-radius: 7px;
+        border: 1px solid hsl(229, 24%, 87%);
+    } */
+    .form-1 input::placeholder {
+        /* font-family: Ubuntu; */
+        font-size: 1rem;
+        /* font-weight: 450; */
+        /* color: hsl(231, 11%, 63%); */
+    }
+    /* .input-validation-flag {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    } */
+    .input-validation-flag p {
+        /* color: hsl(354, 84%, 57%); */
+        font-size: 0.8rem;
+    }
+
+    /* step -2 form ============================================= */
+    .form-2 {
+        gap: 2rem;
+    }
+    /* .form-2 .form-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    } */
+    /* .form-2 .field-requirement-flag {
+        font-weight: 450;
+        color: hsl(354, 84%, 57%);
+    } */
+    .form-2 .plans {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .arcade,
+    .advanced,
+    .pro {
+        /* cursor: pointer; */
+        /* padding: 1.5rem 1rem; */
+        /* border: 1px solid hsl(229, 24%, 87%); */
+        /* border-radius: 8px; */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    /* .arcade:hover,
+    .advanced:hover,
+    .pro:hover {
+        border: 1px solid hsl(243, 100%, 62%);
+        background: hsl(217, 100%, 97%);
+    } */
+    /* .selected-plan {
+        border: 1px solid hsl(243, 100%, 62%);
+        background: hsl(217, 100%, 97%);
+    } */
+    /* .form-2 .plans .plan-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    } */
+    /* .form-2 .plans .plan-info .plan-name {
+        font-size: 1.1rem;
+        color: hsl(213, 96%, 18%);
+        font-weight: 450;
+    } */
+    /* .form-2 .plans .plan-info .price {
+        color: hsl(231, 11%, 63%);
+    } */
+    .form-2 .plans .plan-info .free {
+        /* color: hsl(213, 96%, 18%); */
+        font-size: 0.8rem;
+    }
+    /* .form-2 .plan-duration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        background: hsl(217, 100%, 97%);
+        padding: 1.3rem 0;
+        border-radius: 8px;
+    } */
+    /* .plan-duration .button {
+        background: hsl(213, 96%, 18%);
+        width: 3rem;
+        height: 1.4rem;
+        border-radius: 12px;
+    } */
+    /* .plan-duration .slider {
+        background: white;
+        width: 1rem;
+        height: 1.02rem;
+        border-radius: 50%;
+        margin: 0.2rem 0.2rem;
+        transition: 0.4s;
+    } */
+    /* .switch {
+        transform: translate(25px);
+    } */
+    /* .plan-duration .monthly {
+        color: hsl(213, 96%, 18%);
+        font-weight: 450;
+    } */
+    /* .plan-duration .yearly {
+        color: hsl(213, 96%, 18%);
+        font-weight: 450;
+    } */
+
+    /* step -3 form ============================================ */
+
+    /* .form-3 .form-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    } */
+    .online-service,
+    .larger-storage,
+    .customizable-profile {
+        padding: 0.8rem 0.5rem;
+        /* display: flex; */
+        /* justify-content: space-between; */
+        /* align-items: center; */
+
+        /* border: 1px solid hsl(243, 100%, 62%); */
+        /* border-radius: 7px; */
+        /* cursor: pointer; */
+    }
+    .checkbox-add-on-info {
+        /* display: flex; */
+        /* align-items: center; */
+        gap: 0.5rem;
+    }
+    .add-on-info {
+        /* display: flex; */
+        /* flex-direction: column; */
+        gap: 0.4rem;
+    }
+    .add-on-info .name {
+        font-size: 0.9rem;
+        /* font-weight: 450; */
+        /* color: hsl(213, 96%, 18%); */
+    }
+    .add-on-info .feature {
+        /* color: hsl(231, 11%, 63%); */
+        font-size: 0.8rem;
+    }
+    .form-3 .price {
+        /* color: hsl(243, 100%, 62%); */
+        font-size: 0.9rem;
+    }
+    /* .selected-add-on {
+        border: 1px solid hsl(243, 100%, 62%);
+        background: hsl(217, 100%, 97%);
+    } */
+    /* step-4 form============================================ */
+    /* .form-4 .form-fields {
+        background: hsl(217, 100%, 97%);
+        padding: 1.5rem;
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    } */
+    /* .form-4 .form-fields .plan-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1.5rem;
+
+        border-bottom: 1px solid hsl(229, 24%, 87%);
+    } */
+    /* .plan-info-change {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    } */
+    /* .plan-name-duration {
+        color: hsl(213, 96%, 18%);
+        font-weight: 500;
+    } */
+    /* .change {
+        text-decoration: underline;
+        color: hsl(231, 11%, 63%);
+        cursor: pointer;
+    } */
+    /* .change:hover {
+        color: hsl(243, 100%, 62%);
+    } */
+    /* .plan-header .price {
+        color: hsl(213, 96%, 18%);
+        font-weight: 450;
+    } */
+    /* .form-4 .add-ons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    } */
+    /* .form-4 .add-on {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.95rem;
+    } */
+    .form-4 .add-on .name {
+        color: hsl(231, 11%, 63%);
+        font-weight: 400;
+        font-size: 0.85rem;
+    }
+    .form-4 .add-on .price {
+        color: hsl(213, 96%, 18%);
+        font-size: 0.9rem;
+    }
+
+    /* .total-price {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem;
+    } */
+    /* .total-price .total-plan-duration {
+        font-size: 0.9rem;
+        color: hsl(231, 11%, 63%);
+    } */
+    .total-price .price {
+        font-size: 1.1rem;
+        /* color: hsl(243, 100%, 62%); */
+        /* font-weight: 500; */
+    }
+    /* thank -you ============================================ */
+    .thank-you {
+        margin-top: 5rem;
+        padding-bottom: 5rem;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* text-align: center; */
+        /* gap: 1.5rem; */
+        width: 110%;
+    }
+    /* .thank-you h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: hsl(213, 96%, 18%);
+    } */
+    /* .thank-you p {
+        line-height: 1.4rem;
+        color: hsl(231, 11%, 63%);
+    } */
+
+    /* navigation =========================================== */
+
+    .navigate {
+        position: fixed;
+        bottom: 0;
+        background: white;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.2rem;
+    }
+    .navigate .pre {
+        color: hsl(231, 11%, 63%);
+        font-weight: 500;
+    }
+    .navigate .pre:hover {
+        color: hsl(213, 96%, 18%);
+    }
+    .navigate .next {
+        background: hsl(213, 96%, 18%);
+        color: white;
+        padding: 1rem 1.3rem;
+        border-radius: 7px;
+    }
+    .navigate .next:hover {
+        background: hsl(243, 100%, 62%);
+    }
+    .fix-navigate {
+        justify-content: flex-end !important;
+    }
+    .confirm:hover {
+        background: hsl(228, 100%, 84%) !important;
+    }
 }
 
 .noDisplay {

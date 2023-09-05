@@ -207,13 +207,13 @@ function change_duration(event) {
     let customizable_profile_price = document.querySelector(".form-3 .customizable-profile .price");
 
     if (planDuration == "monthly") {
-        arcade_price.innerHTML = "&dollar;90/mo";
-        advanced_price.innerHTML = "&dollar;120/mo";
-        pro_price.innerHTML = "&dollar;150/mo";
+        arcade_price.innerHTML = "&dollar;90/yr";
+        advanced_price.innerHTML = "&dollar;120/yr";
+        pro_price.innerHTML = "&dollar;150/yr";
 
-        online_service_price.innerHTML = "&dollar;10/mo";
-        larger_storage_price.innerHTML = "&dollar;20/mo";
-        customizable_profile_price.innerHTML = "&dollar;20/mo";
+        online_service_price.innerHTML = "+&dollar;10/yr";
+        larger_storage_price.innerHTML = "+&dollar;20/yr";
+        customizable_profile_price.innerHTML = "+&dollar;20/yr";
 
         document.querySelector(".button .slider").classList.toggle("switch");
         planDuration = "yearly";
@@ -226,9 +226,9 @@ function change_duration(event) {
         advanced_price.innerHTML = "&dollar;12/mo";
         pro_price.innerHTML = "&dollar;15/mo";
 
-        online_service_price.innerHTML = "&dollar;1/mo";
-        larger_storage_price.innerHTML = "&dollar;2/mo";
-        customizable_profile_price.innerHTML = "&dollar;2/mo";
+        online_service_price.innerHTML = "+&dollar;1/mo";
+        larger_storage_price.innerHTML = "+&dollar;2/mo";
+        customizable_profile_price.innerHTML = "+&dollar;2/mo";
 
         document.querySelector(".button .slider").classList.toggle("switch");
         planDuration = "monthly";
@@ -320,5 +320,20 @@ function activate_form_4() {
     totalPlanPrice = parseInt(totalPlanPrice);
     let total = totalAddOnPrice + totalPlanPrice;
     console.log(total);
-    document.querySelector(".total-price .price").innerHTML = "&dollar;" + total + "/" + planDuration.slice(0, 2);
+    if (planDuration == "monthly") {
+        document.querySelector(".total-price .price").innerHTML = "&dollar;" + total + "/" + planDuration.slice(0, 2);
+    } else {
+        document.querySelector(".total-price .price").innerHTML = "&dollar;" + total + "/" + "yr";
+    }
+}
+
+let change_button = document.querySelector(".form-4 .change");
+change_button.addEventListener("click", open_step_2);
+
+function open_step_2(event) {
+    form_4.classList.add("noDisplay");
+    form_2.classList.remove("noDisplay");
+    step_4_number.classList.remove("selected-step-number");
+    step_2_number.classList.add("selected-step-number");
+    currStep = 2;
 }
