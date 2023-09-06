@@ -95,7 +95,7 @@ function validate_phone(phone) {
 }
 
 function validate_name(name) {
-    let regex = /^[a-zA-Z ]{2,30}$/;
+    let regex = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
     if (regex.test(name)) {
         console.log("KDF", name);
         return true;
