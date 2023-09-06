@@ -33,10 +33,10 @@ function validate_fields(event) {
             document.querySelector(".form-1 .name-validation-flag").classList.add("noDisplay");
         } else if (validate_name(event.currentTarget.value)) {
             document.querySelector(".form-1 .name-validation-flag").classList.add("noDisplay");
-            isEmailValid = true;
+            isNameValid = true;
         } else {
             document.querySelector(".form-1 .name-validation-flag").classList.remove("noDisplay");
-            isEmailValid = false;
+            isNameValid = false;
         }
     } else if (event.currentTarget.id == "email") {
         if (event.currentTarget.value == "") {
@@ -97,7 +97,6 @@ function validate_phone(phone) {
 function validate_name(name) {
     let regex = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
     if (regex.test(name)) {
-        console.log("KDF", name);
         return true;
     } else {
         return false;
