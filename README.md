@@ -1,64 +1,55 @@
-## Welcome! 👋
+# Multi-Step Form
 
-Thanks for checking out this front-end coding challenge.
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+![Project Preview](design/active-states-step-1.jpg)
 
-## The challenge
+## 🚀 Overview
 
-Your challenge is to build out this multi-step form and get it looking as close to the design as possible.
+This project is a **multi-step form** built using HTML, CSS, and JavaScript. The goal was to implement a fully interactive and responsive form where users can:
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+- Navigate through multiple steps of a form.
+- Go back to previous steps and update selections.
+- View a summary of their inputs before confirming.
+- Receive validation messages for missing or incorrect fields.
+- Experience an optimized layout across different screen sizes.
 
-Your users should be able to:
+## 🔧 Technologies Used
 
-- Complete each step of the sequence
-- Go back to a previous step to update their selections
-- See a summary of their selections on the final step and confirm their order
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- Receive form validation messages if:
-  - A field has been missed
-  - The email address is not formatted correctly
-  - A step is submitted, but no selection has been made
+- HTML5
+- CSS3 (Flexbox & Grid for layout)
+- JavaScript (Form validation & navigation)
 
-## Where to find everything
+## 📂 Folder Structure
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+```
+├── assets/          # Images, icons, and other assets
+├── design/         # Reference design files
+├── js/             # JavaScript files
+├── css/            # Stylesheets
+├── index.html      # Main HTML file
+├── README.md       # Project documentation
+```
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+## 🎨 Features
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+- **Responsive Design**: Optimized for mobile and desktop views.
+- **Smooth Form Navigation**: Users can go back and forth between steps.
+- **Form Validation**: Checks for required fields and correct email format.
+- **Hover & Focus Effects**: Enhances user experience.
+- **Summary Preview**: Displays user selections before final submission.
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+## 🖥️ Live Demo
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+🔗 [View Live Project](https://multi-step-form-nine-black.vercel.app/)
 
-## Building your project
+## 🚀 Deployment
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+This project is hosted on **Vercel**. You can deploy your own by:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+1. Uploading the repository to GitHub.
+2. Importing it into Vercel.
+3. Deploying with default settings (no build step needed).
 
-## Deploying your project
+## 📝 Credits
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-**Have fun building!** 🚀
+This project was built as a challenge from **Frontend Mentor**.
